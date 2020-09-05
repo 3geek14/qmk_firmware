@@ -46,9 +46,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Del    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L1  |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | BkSp   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2|' / Cmd |
+ * | LAlt   |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |; / L2|' / Cmd |
  * |--------+------+------+------+------+------|  L2  |           |  L2  |------+------+------+------+------+--------|
- * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |./... |//Ctrl| RShift |
+ * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  | ./…  |//Ctrl| RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |Grv/L1|  '"  |AltShf| Left | Right|                                       |  Up  | Down |   [  |   ]  | ~L1  |
  *   `----------------------------------'                                       `----------------------------------'
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox_pretty(
   KC_EQUAL,	KC_1,	KC_2,	KC_3,	KC_4,	KC_5,	KC_6,                     	KC_5,	KC_6,	KC_7,	KC_8,	KC_9,	KC_0,	KC_MINUS,
   KC_DELETE,	KC_Q,	KC_W,	KC_E,	KC_R,	KC_T,	TG(UTIL),	TG(UTIL),	KC_Y,	KC_U,	KC_I,	KC_O,	KC_P,	KC_BSLASH,
-  KC_BSPACE,	KC_A,	KC_S,	KC_D,	KC_F,	KC_G,			KC_H,	KC_J,	KC_K,	KC_L,	LT(MNCRFT,KC_SCOLON),	LGUI_T(KC_QUOTE),
+  KC_LALT,	KC_A,	KC_S,	KC_D,	KC_F,	KC_G,			KC_H,	KC_J,	KC_K,	KC_L,	LT(MNCRFT,KC_SCOLON),	LGUI_T(KC_QUOTE),
   KC_LSHIFT,	LCTL_T(KC_Z),	KC_X,	KC_C,	KC_V,	KC_B,	TG(MNCRFT),	TG(MNCRFT),	KC_N,	KC_M,	KC_COMMA,	TD(TD_DOT_DOTS),	RCTL_T(KC_SLASH),	KC_RSHIFT,
   LT(UTIL,KC_GRAVE),	KC_QUOTE,	LALT(KC_LSHIFT),	KC_LEFT,	KC_RIGHT,					KC_UP,	KC_DOWN,	KC_LBRACKET,	KC_RBRACKET,	MO(UTIL),
   
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,--------------------------------------------------.           ,--------------------------------------------------.
  * |        |      |      |      |      |      |      |           | RGui |      |      |      |      |      |        |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * |        |   Q  |   W  |   E  |   R  |   T  |      |           |      |      |      | MsUp |      |      |        |
+ * |        |   Q  |   W  |   E  |   R  |   T  |      |           |      |      |LClick| MsUp |RClick|      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | LShift |   A  |   S  |   D  |   F  |   G  |------|           |------|      |MsLeft|MsDown|MsRght|      |        |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
@@ -126,7 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [MNCRFT] = LAYOUT_ergodox_pretty(
   KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,               	KC_RGUI,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,
-  KC_TRNS,	KC_Q,	KC_W,	KC_E,	KC_R,	KC_T,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_MS_U,	KC_TRNS,	KC_TRNS,	KC_TRNS,
+  KC_TRNS,	KC_Q,	KC_W,	KC_E,	KC_R,	KC_T,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_BTN1,	KC_MS_U,	KC_BTN2,	KC_TRNS,	KC_TRNS,
   KC_LSHIFT,	KC_A,	KC_S,	KC_D,	KC_F,	KC_G,			KC_TRNS,	KC_MS_L,	KC_MS_D,	KC_MS_R,	KC_TRNS,	KC_TRNS,
   KC_LCTRL,	KC_Z,	KC_X,	KC_C,	KC_V,	KC_B,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,
   KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,					KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,	KC_TRNS,
