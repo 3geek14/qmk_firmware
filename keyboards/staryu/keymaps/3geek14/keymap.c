@@ -24,13 +24,29 @@ enum layers {
   _LAYER4
 };
 
+enum custom_keycodes {
+  PHANTASY = SAFE_RANGE,
+};
+
+enum unicode_names {
+    INTERRO,
+    IRONY,
+    SNEK
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [INTERRO]  = 0x203D,	// ‽
+    [IRONY] = 0x2E2E,	// ⸮
+    [SNEK]  = 0x1F40D,	// 🐍
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LAYER0] = LAYOUT(
 /* ┌─────────┬─────────┬─────────┐ */
               KC_UP,    TO(_LAYER1),
 /* ├─────────┼─────────┼─────────┤ */
-    KC_LEFT,  KC_DOWN,  KC_RIGHT
+    PHANTASY, KC_DOWN,  KC_RIGHT
 /* └─────────┴─────────┴─────────┘ */
   ),
 
@@ -101,4 +117,15 @@ layer_state_t layer_state_set_user(layer_state_t state) {
         break;
     }
   return state;
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    case PHANTASY:
+      if (record->event.pressed) {
+        send_unicode_hex_string("1F456 1F351 1F30A 1F31F"); // 👖🍑🌊🌟
+        return true;
+      }
+  }
+  return true;
 }
